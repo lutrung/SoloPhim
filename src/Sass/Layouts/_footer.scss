@@ -1,0 +1,145 @@
+footer {
+    background-color: $color-black-2;
+    color: $color-gray-0;
+    padding: $pd-4 0;
+    letter-spacing: 0.5px;
+    border-top: 1px solid $color-gray-0;
+    .container {
+        max-width: 80%;
+    }
+    
+    .footer__content {
+        .footer__title {
+            @include styleText($color-white-0, $fs-1, $fw-2);
+        }
+        .footer__policy {
+            display: flex;
+            margin-bottom: $mg-1;
+            .policy__left {
+                margin-right: 40px;
+            }
+        }
+
+        .footer__link {
+            @include styleText($color-gray-0, $fs-1, $fw-2);
+            display: block;
+            line-height: 2.3;
+            &:hover {
+                color: $color-white-0;
+            }
+        }
+        .footer__icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 30px;
+            background-color: $color-white-0;
+            margin-right: $mg-2 - 5;
+            margin-bottom: $mg-2 - 5;
+        }
+        .footer__apps {
+            display: flex;
+            .footer__systems {
+                margin-right: 40px;
+            }
+            .footer__iconMobile {
+                width: 30px;
+                height: 30px;
+                margin-right: $mg-2;
+                margin-bottom: $mg-2;
+            }
+        }
+    }
+    .hrFooter {
+        border-top: 1px solid #4a4a4a;
+    }
+    .footer__copyright {
+        .zinoLogo {
+            width: 80px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: $mg-2 - 5;
+        }
+        .registerLogo {
+            width: 130px;
+            height: auto;
+            float: right;
+            padding-bottom: $pd-2;
+        }
+        .footer__info {
+            padding-left: $pd-5;
+            margin-bottom: $mg-1;
+            span {
+                display: block;
+                line-height: 1.8;
+                @include styleText($color-gray-0, $fs-1, $fw-1);
+            }
+            span:first-child {
+                color: $color-white-0;
+            }
+        }
+    }
+}
+@include responsive("extra-large") {
+    footer {
+        .container {
+            max-width: 90% !important;
+        }
+        .footer__content .footer__policy .footer__link {
+            color: blue;
+        }
+    }
+}
+@include responsive("large") {
+    footer {
+        .container {
+            max-width: 94% !important;
+        }
+        .footer__title,
+        .policy__left,
+        .footer__partners,
+        .footer__systems {
+            display: none;
+        }
+        .policy__right {
+            display: flex;
+            .footer__link {
+                margin: 0 $mg-1;
+            }
+        }
+        .footer__copyright .footer__info {
+            text-align: center;
+        }
+        .footer__content .footer__policy .policy__right .footer__link {
+            color: red;
+        }
+    }
+}
+@include responsive("medium") {
+    footer {
+        .container {
+            max-width: 100% !important;
+            .footer__content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .footer__policy,
+        .footer__apps {
+            justify-content: center;
+        }
+        .footer__copyright {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            .registerLogo {
+                float: unset;
+            }
+        }
+        .hrFooter{
+            margin-top: unset;
+        }
+        .footer__content .footer__policy .policy__right .footer__link {
+            color: pink;
+        }
+    }
+}

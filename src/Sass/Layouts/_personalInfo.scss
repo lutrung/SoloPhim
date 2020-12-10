@@ -1,0 +1,114 @@
+.PersonalInfo_conent {
+//    .personalInfo_banner{
+//        background-image: url(../assets/img/banner.jpg);
+//        background-size: cover;
+//        background-position: center;
+//        height: 500px;
+//        width: 100%;
+//    }
+    .personalInfo_info {
+        .nav-tabs {
+            margin-left: $mg-2 * 2;
+            border: none;
+            .nav-link {
+                border-top-right-radius: $fs-5;
+                background: rgb(218, 216, 216) !important;
+                color: black !important;
+                &:focus {
+                    background: #226bb5 !important;
+                    color: white !important;
+                }
+            }
+        }
+        margin: 50px auto;
+        .personal_information {
+            padding: $pd-5;
+            border: 1px solid gray;
+            width: 100%;
+            .personalInfo_left, .personalInfo_right{
+                display: flex;
+                flex-direction: column;
+                word-wrap: break-word;
+                p{
+                    font-weight: bold;
+                    font-size: $fs-4;
+                    span{
+                        font-weight: normal;
+                        font-size: $fs-2;
+                    }
+                }
+            }
+        }
+        .history_booking {
+            border: 1px solid gray;
+            padding: $pd-5;
+            width: 100%;
+            .history_booking_right{
+                .info_ticket{
+                    img{
+                        width: 150px;
+                        height: 150px;
+                    }
+                    .info_ticket_text{
+                        .theater_name{
+                            @include styleText(black,24px,bold)
+                        }
+                        .movie_name{
+                            @include styleText(black,20px,bold)
+                        }
+                        .movie_nameBinding{
+                            @include styleText(red,20px,normal)
+                        }
+                        .theater_chair{
+                            @include styleText(black,20px,normal)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 375px) {
+    .PersonalInfo_conent{
+        .personalInfo_info {
+            .personal_title {
+                margin-left: 0 ;
+            }
+            .personal_information_menu{
+                flex-direction: column ;
+                .personalInfo_left, .personalInfo_right{
+                    max-width: 100%;
+                }
+            }
+            .history_booking{
+                border: none;
+                .history_booking_content{
+                    border: 1px solid;
+                    padding: 5px;
+                }
+                .info_ticket{
+                    margin: 0 !important;
+                    img{
+                        display: none;
+                    }
+                    .info_ticket_text{
+                        margin: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 376px)  and (max-width: 768px){
+    .PersonalInfo_conent{
+        .personalInfo_info{
+            .history_booking{
+                .history_booking_right{
+                    img{
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

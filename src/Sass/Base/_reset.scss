@@ -1,0 +1,14 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    background: $color-white-0;
+    font-family: 'Roboto', sans-serif;;
+    @include styleText($color-black-0,$fs-2,$fw-normal);
+}
+a:hover{
+    text-decoration: none;
+    transition: all .2s;
+}

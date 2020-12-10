@@ -1,0 +1,198 @@
+.chiTietPhim{
+    background: linear-gradient(to top, rgb(2, 44, 58), rgba(0, 0, 0, 0.733));
+    padding: 20px 0;
+    .chiTietPhim_content{
+        .chiTietPhim_left{
+            .chiTietPhim_anh{
+                img{
+                    width: 100%;
+                    height: 300px;
+                }
+            }
+            .chiTietPhim_thongTin{
+                margin: auto;
+                .thongTin_ngayChieu{
+                    font-size: 15px;
+                    color: white;
+                    font-weight: normal;
+                }
+                .thongTin_tenPhim{
+                    display: block;
+                    font-size: 30px;
+                    color: white;
+                    font-weight: bold;
+                }
+                .thongTin_thoiLuong{
+                    display: block;
+                    font-size: 15px;
+                    color: white;
+                    font-weight: normal;
+                }
+                .btn_muaVe{
+                    background-color: orangered;
+                    font-size: 15px;
+                    color: white;
+                    font-weight: bold;
+                    outline: none;
+                    border: none;
+                    transition: all 0.5s;
+                    &:hover{
+                        background-color: #c14431;
+                    }
+                }
+            }
+        }
+        .chiTietPhim_right{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .chiTietPhim_danhGia{
+                height: 100px;
+                width: 100px;
+                background-color: #000000ba;
+                line-height: 100px;
+                text-align: center;
+                border-radius: 50%;
+                border: 5px solid #25c725;
+                font-size: 40px;
+                font-weight: bold;
+                color: white;
+            }
+            .chiTietPhim_star{
+                margin: 5px 0;
+                .fa{
+                    font-size: 20px;
+                    color: orangered;
+                }
+            }
+            .chiTietPhim_soNguoi{
+                font-size: 15px;
+                color: white;
+                font-weight: normal;
+            }
+        }
+    }
+    .lichChieu_thongTin{
+        margin: 20px 0;
+        .title{
+            .nav-tabs{
+                justify-content: center;
+                border: none;
+                a{
+                    font-size: 20px;
+                    color: white;
+                    font-weight: bold;
+                    border: none;
+                    transition: all 0.5s;
+                    &:hover{
+                        transform: scale(1.1,1.1);
+                        border:none;
+                    }
+                }
+            }
+        }
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color:  orangered;
+            border: none;
+            background-color: transparent;
+            &:hover{
+                transform: none;
+            }
+        }
+        .noiDung{
+            .noiDung_ThongTin{
+                width: 70%;
+                margin: auto;
+                color: white;
+                .noiDung_ThongTin_content{
+                    .noiDung_ThongTin_left, .noiDung_ThongTin_right{
+                        .row > div{
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }
+            .noiDung_lichChieu{
+                width: 80%;
+                margin: auto;
+                .noiDung_lichChieu_content{
+                    background-color: white;
+                    border-radius: 15px;
+                    .noiDung_lichChieu_left{
+                        a{
+                            cursor: pointer;
+                            position: relative;
+                            padding: 20px;
+                            width: 100%;
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                width: 80%;
+                                transform: translateX(-50%);
+                                border-bottom: 1px solid #fff;
+                                border-color: rgba(238,238,238,.88);
+                            }
+                            &:hover{
+                                img, .tenHTRap{
+                                    opacity: 1;
+                                }
+                            }
+                            img{
+                                height: 50px;   
+                                width: 50px;
+                                opacity: 0.5; 
+                            }
+                            .tenHTRap{
+                                font-size: 15px;
+                                color: black;
+                                font-weight: bold;
+                                margin: 0 5px;
+                                opacity: 0.5;
+                            }
+                        }
+                    }
+                    .noiDung_lichChieu_right{
+                        a{
+                            padding: 0;
+                        }
+                        .rap_lichChieu{
+                            padding: 20px;
+                            display: flex;
+                            border-bottom: 1px solid rgba(238,238,238,.88);
+                            img{
+                                height: 50px;
+                                width: 50px;
+                            }
+                            div{
+                                margin: 0 10px;
+                                .tenRap{
+                                    display: block;
+                                    color: #30aa23;
+                                    font-size: 15px;
+                                    font-weight: normal;
+                                    margin-bottom: 5px;
+                                }
+                                .suatChieu{
+                                    padding: 5px;
+                                    margin: 0 10px 10px 0;
+                                    background-color: rgba(246,246,246,.5);
+                                    border: 1px solid #e4e4e4;
+                                    border-radius: 7px;
+                                    font-size: 15px;
+                                    font-weight: bold;
+                                    color:black;
+                                    &:hover{
+                                        color: red;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,281 @@
+#carouselExampleIndicators{
+    
+    .carousel-inner{
+        .carousel-item{
+            position: relative;
+            a{
+                height: 100px;
+                width: 100px;
+                border: 3px solid white;
+                background-color: rgba(0, 0, 0, 0.781);
+                border-radius: 50%;
+                text-align: center;
+                line-height: 100px;
+                font-size: 50px;
+                color: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                cursor: pointer;
+            }
+        }
+    }
+}
+.movieList{
+    position: relative;
+    .slick-initialized .slick-slide > div{
+        margin: 0 10px;
+    }
+    .card_Movie{
+        cursor: pointer;
+        overflow: hidden;
+        
+        &:hover{
+                .btn_BuyTicket{
+                    display: block;
+                }
+                .card_info{
+                    display: none;
+                }
+                .card__overlay{
+                    opacity: 1;
+                    .movie__playicon{
+                        opacity: 1;
+                    }
+                }
+                
+            }
+            .card__overlay{
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: #000000b9;
+                transition: all 1s;
+            }   
+        .moive_Poster{
+            position: relative;
+            border-radius: 5%;
+            overflow: hidden;
+            img{
+                height: 250px;
+                width: 100%;
+            }
+            .movie__playicon{
+                height: 50px;
+                width: 50px;
+                background-color: #4141417e;
+                position: absolute;
+                top: 50%;
+                line-height: 50px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                border: 1px solid white;
+                border-radius: 50%;
+                opacity: 0;
+                transition: all 1s;
+                &:hover{
+                    opacity: 0.7;
+                }
+                i{
+                    color: white;
+                }
+            }
+        }
+        .card_info{
+            text-align: center;
+            .movies_Name{
+                white-space: nowrap; 
+                overflow: hidden;
+                text-overflow: ellipsis; 
+                @include styleText(black,$fs-3,$fw-2);
+                margin: 10px 0px;
+            }
+            .star{
+                color: #ffd921;
+            }
+        }
+        .btn_BuyTicket{
+            width: 100%;
+            border-color: white;
+            display: none;
+            margin: 10px 0;
+            transition: all 0.5s;
+            &:hover{
+                background-color: green;
+            }
+        }
+    }
+    .slick-arrow::before {
+        font-size: 50px;
+        opacity: 1;
+        background-color: #fff;
+        height: 50px;
+        width: 50px;
+        line-height: 50px;
+        border-radius: 50%;
+        color: #d2d8da;
+        position: absolute;
+    }
+    .slick-next::before{
+        right: -50px;
+    }
+    .slick-prev::before{
+        left: -50px;
+    }
+}
+.cinema{
+    padding: 0;
+    border: 1px solid rgba(238,238,238,.88);
+    margin: 20px auto;
+    overflow: hidden;
+    height: 580px;
+    .cinema_content{
+        margin: 0;
+    }
+    .logo_cinema{
+        padding: 0;
+        a{
+            position: relative;
+            padding: 20px;
+            width: 100%;
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 80%;
+                transform: translateX(-50%);
+                border-bottom: 1px solid #fff;
+                border-color: rgba(238,238,238,.88);
+            }
+            &:hover{
+                img{
+                    opacity: 1;
+                }
+            }
+            img{
+                height: 50px;
+                width: 50px;
+                opacity: 0.5; 
+            }
+        }
+    }
+    .cinema_system{
+        border-left: 1px solid rgba(238,238,238,.88);
+        border-right: 1px solid rgba(238,238,238,.88);
+        padding: 0;
+        .cinema_system_render{
+            cursor: pointer;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            &:hover{
+                background-color: rgba(206, 206, 206, 0.589);
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 80%;
+                transform: translateX(-50%);
+                border-bottom: 1px solid #fff;
+                border-color: rgba(238,238,238,.88);
+            }
+            .chiNhanh_content{
+                margin: 0;
+                // height: 50px;
+                .anhChiNhanh{
+                    padding: 0;
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                .thongTinChiNhanh{
+                    padding: 0;
+                    .tenChiNhanh{
+                        padding: 0;
+                        color: #30aa23;
+                        font-size: 15px;
+                        font-weight: normal;
+                    }
+                    .diaChiChiNhanh{
+                        padding: 0;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .chiTietChiNhanh{
+                        padding: 0;
+                        a{
+                            padding: 0;
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .movie_schedule{
+        height: 600px;
+        overflow-y: scroll;
+        padding: 0;
+        a{
+            padding: 0;
+            .thongTin_content{
+                margin: 0;
+                padding: 20px;
+                position: relative;
+                display: flex;
+                .thongTin_anh{
+                    padding: 0;
+                    img{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                .thongTin_lichChieu{
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 15px;
+                    .tenPhim{
+                        font-size: 15px;
+                        font-weight: bold;
+                        color: black;
+                        margin-bottom: 5px;
+                    }
+                    .suatChieu{
+                        padding: 5px;
+                        margin: 0 10px 10px 0;
+                        background-color: rgba(246,246,246,.5);
+                        border: 1px solid #e4e4e4;
+                        border-radius: 7px;
+                        font-size: 15px;
+                        font-weight: bold;
+                        color: #108f3e;
+                        &:hover{
+                            color: red;
+                        }
+                    }
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 90%;
+                    transform: translateX(-50%);
+                    border-bottom: 1px solid #fff;
+                    border-color: rgba(238,238,238,.88);
+                }
+            }
+        }
+        
+    }
+}

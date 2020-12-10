@@ -1,0 +1,152 @@
+.SignUp_content {
+    position: relative;
+    img{
+        height: 100%;
+        width: 100%;
+        
+    }
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background:rgba(0,0,0,0.5);
+    }
+    .SignUp_loginPic{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height: 60%;
+        width: 60%;
+        background: rgb(255, 255, 255);
+        border-radius: 20px;
+        box-shadow: 5px 7px 10px 5px gray;
+        overflow: hidden; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .SignUp_pic{
+            width: 60%;
+            height: 100%;
+        }
+        .SignUp_login{
+            overflow: scroll;
+            padding: 20px;
+            height: 100%;
+            width: 40%;
+            text-align: center;
+            form{
+                // height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .form-group {
+                p {
+                    text-align: left;
+                }
+                .formSigup{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 20px;
+                    padding: $pd-0 $pd-3;
+                    background: #f0f0f0;
+                    i{
+                        color: #acacac;
+                    }
+                    input{
+                        background: none;
+                        outline: none;
+                        border: none;
+                        &:focus{
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 375px){
+    .SignUp_content{
+        img{
+            display: none;
+        }
+        .SignUp_loginPic{
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            width: 100%;
+            border-radius: 0;
+            .SignUp_pic{
+                display: none;
+            }
+            .SignUp_login{
+                width: 100%;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 376px)  and (max-width: 768px){
+    .SignUp_content{
+        .SignUp_loginPic{
+            height: 80%;
+            width: 60%;
+            .SignUp_pic{
+                display: none;
+            }
+            .SignUp_login{
+                width: 100%;
+            }
+        }
+    }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    .SignUp_content{
+        .SignUp_loginPic{
+            height: 80%;
+            width: 80%;
+            .SignUp_pic{
+                width: 100%;
+            }
+            .SignUp_login{
+                width: 100%;
+            }
+        }
+    }
+}
+// @include responsive("small") {
+//     .SignUp_loginPic{
+//         width: 100% !important;
+//         height: 100% !important;
+//         border-radius: 0 !important;
+//         box-shadow: none !important;
+//         .SignUp_pic{
+//             display: none;
+//         }
+//         .SignUp_login{
+//             width: 100% !important;
+//         }
+//     }
+// }
+// @include responsive("large") {
+//     .SignUp_pic{
+//         display: none;
+//     }
+//     .SignUp_login{
+//         width: 100% !important;
+//     }
+// }
+// @include responsive("extra-large") {
+//     .SignUp_pic{
+//         width: 40% !important;
+//     }
+//     .SignUp_login{
+//         width: 60% !important;
+//     }
+// }

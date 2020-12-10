@@ -1,0 +1,28 @@
+//Helper
+@import './Helper/variables';
+@import './Helper/mixin';
+
+//Vendor
+
+
+//Base
+@import './Base/reset';
+
+
+//Components
+@import './Components/button';
+
+//Layouts
+@import './Layouts/header';
+@import './Layouts/footer';
+@import './Layouts/trangchu';
+@import './Layouts/chiTietPhongVe';
+@import './Layouts/chiTietPhim';
+@import './Layouts/login';
+@import './Layouts/signup';
+@import './Layouts/personalInfo';
+//Pages
+
+//Theme
+@import './Helper//animation';
+

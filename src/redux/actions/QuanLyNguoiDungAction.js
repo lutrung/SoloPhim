@@ -36,7 +36,7 @@ export const dangKyApiAction = async (userSignup) => {
                 data: userSignup
             })
             swal.fire('Thông báo', 'Đăng ký thành công', 'success')
-            history.push('/login')
+            history.push('/dangnhap')
         } catch (err) {
             swal.fire('Thông báo', err.response.data, 'error')
         }

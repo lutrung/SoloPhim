@@ -60,7 +60,7 @@ export default function DangNhap(props) {
                             <a href='https://twitter.com/'><i class="fab fa-twitter social-icon"></i></a>
                             <a href='https://www.linkedin.com/'><i class="fab fa-linkedin-in social-icon"></i></a>
                         </div>
-                        <span>Bạn chưa có tài khoản?<a href='/signup'> Đăng ký</a></span>
+                        <span>Bạn chưa có tài khoản?<a href='/dangky'> Đăng ký</a></span>
                     </form>
 
                 </div>

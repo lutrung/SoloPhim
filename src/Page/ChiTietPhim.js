@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { layThongLichChieuPhimApiAction, layHeThongRapApiAction, layHeThongCumRapApiAction, layLichChieuHTRApiAction } from '../redux/actions/QuanLyPhimAction';
 import moment from 'moment'
 import { NavLink } from 'react-router-dom';
+import { USER_LOGIN } from '../Util/Config';
 
 export default function ChiTietPhim(props) {
     // API THONG TIN LICH CHIEU PHIM
@@ -102,9 +103,18 @@ export default function ChiTietPhim(props) {
                                                             <div>
                                                                 <span className='tenRap'>{rapChieu.tenCumRap}</span>
                                                                 {rapChieu.lichChieuPhim?.slice(0, 5).map((lichChieu, index) => {
-                                                                    return <NavLink className='suatChieu' key={index} to={'/chitietphongve/' + lichChieu.maLichChieu}>
+                                                                    return <button className='suatChieu' key={index} onClick={async () => {
+                                                                        if (localStorage.getItem(USER_LOGIN)) {
+                                                                            props.history.push('/chitietphongve/' + lichChieu.maLichChieu)
+                                                                        } else {
+                                                                            props.history.push('/dangnhap')
+                                                                        }
+                                                                    }}>
                                                                         {moment(lichChieu.ngayChieuGioChieu).format('hh:mm')}
-                                                                    </NavLink>
+                                                                    </button>
+                                                                    // <NavLink className='suatChieu' key={index} to={'/chitietphongve/' + lichChieu.maLichChieu}>
+                                                                    //     {moment(lichChieu.ngayChieuGioChieu).format('hh:mm')}
+                                                                    // </NavLink>
                                                                 })}
                                                             </div>
                                                         </div>

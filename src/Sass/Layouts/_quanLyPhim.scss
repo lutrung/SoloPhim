@@ -1,0 +1,20 @@
+.quanLyPhim_content{
+    .bangPhim{
+        .table{
+            height: 500px;
+            .head{
+                th{
+                    white-space: nowrap;
+                }
+            }
+            .body{
+                .test{
+                    overflow: hidden;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box !important;
+                }
+            }
+        }
+    }
+}

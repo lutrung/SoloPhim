@@ -7,7 +7,10 @@ import TrangChu from './Page/TrangChu';
 import { HomeTemplate } from './Template/HomeTemplate';
 import ChiTietPhongVe from './Page/ChiTietPhongVe';
 import ChiTietPhim from './Page/ChiTietPhim';
-
+import { AdminTemplate } from './Template/AdminTemplate';
+import Admin from './Page/Admin/Admin';
+import QuanLyPhim from './Page/Admin/Phim/QuanLyPhim';
+import QuanLyNguoiDung from './Page/Admin/NguoiDung/QuanLyNguoiDung';
 function App() {
   return (
     <>
@@ -19,6 +22,9 @@ function App() {
         <Route exact path='/thongtincanhan' component={ThongTinCaNhan} />
         <Route exact path='/dangnhap' component={DangNhap} />
         <Route exact path='/dangky' component={DangKy} />
+        <AdminTemplate exact path='/admin' Component={Admin} />
+        <AdminTemplate exact path='/admin/quanlyphim' Component={QuanLyPhim} />
+        <AdminTemplate exact path='/admin/quanlynguoidung' Component={QuanLyNguoiDung} />
       </Switch>
     </>
   );

@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import moment from 'moment'
 import { NavLink } from 'react-router-dom';
+import { USER_LOGIN } from '../Util/Config';
 
 export default function TrangChu(props) {
     const dispatch = useDispatch();
@@ -27,7 +28,6 @@ export default function TrangChu(props) {
         dispatch(await layHeThongRapApiAction())
     }, [])
     const heThongRap = useSelector(state => state.QuanLyPhimReducer.heThongRap)
-
     // API HE THONG CUM RAP
     const [code, setcode] = useState("BHDStar");
     const codeCinema = (code) => {
@@ -37,7 +37,7 @@ export default function TrangChu(props) {
         dispatch(await layHeThongCumRapApiAction(code))
     }, [code])
     const cumRap = useSelector(state => state.QuanLyPhimReducer.cumRap)
-    console.log(cumRap);
+    console.log('cumRap', cumRap);
 
     // API THONG TIN LICH CHIEU HE THONG RAP
 
@@ -49,6 +49,7 @@ export default function TrangChu(props) {
     const maCumRap = (ma) => {
         setmaCR(ma);
     };
+    console.log(maCR);
     return (
         <div>
             {/* CAROUSEL */}
@@ -82,7 +83,7 @@ export default function TrangChu(props) {
                 </a>
             </div>
             {/* DANH SACH PHIM */}
-            <div className='container movieList' style={{ padding: '20px 0' }}>
+            <div className='container movieList' style={{ padding: '20px 0' }} id='lichChieu'>
                 <Slider {...owlCarousel}>
                     {dsPhim.slice(0, 12).map((phim, index) => {
                         return <Fragment key={index}>
@@ -111,7 +112,7 @@ export default function TrangChu(props) {
                 </Slider>
             </div>
             {/* CUM RAP */}
-            <div className='container cinema'>
+            <div className='container cinema' id='cumrap'>
                 <div className='row cinema_content'>
                     <div className='logo_cinema col-1'>
                         {heThongRap?.map((cinema, index) => {
@@ -168,9 +169,18 @@ export default function TrangChu(props) {
                                                         </div>
                                                         <div >
                                                             {dsPhim.lstLichChieuTheoPhim?.slice(0, 10).map((lichChieu, index) => {
-                                                                return <NavLink className='suatChieu' key={index} to={'/chitietphongve/' + lichChieu.maLichChieu}>
+                                                                return <button className='suatChieu' key={index} onClick={async () => {
+                                                                    if (localStorage.getItem(USER_LOGIN)) {
+                                                                        props.history.push('/chitietphongve/' + lichChieu.maLichChieu)
+                                                                    } else {
+                                                                        props.history.push('/dangnhap')
+                                                                    }
+                                                                }}>
                                                                     {moment(lichChieu.ngayChieuGioChieu).format('hh:mm')}
-                                                                </NavLink>
+                                                                </button>
+                                                                // <NavLink className='suatChieu' key={index} to={'/chitietphongve/' + lichChieu.maLichChieu}>
+                                                                //     {moment(lichChieu.ngayChieuGioChieu).format('hh:mm')}
+                                                                // </NavLink>
                                                             })}
                                                         </div>
                                                     </div>

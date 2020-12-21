@@ -119,3 +119,19 @@ export const datVeApiAction = async (thongTinVe) => {
         }
     }
 }
+export const themPhimApiAction = async (form_data) => {
+    return async (dispatch) => {
+        try {
+            let result = await Axios({
+                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/ThemPhimUploadHinh',
+                method: 'POST',
+                data: form_data,
+                headers: { 'Authorization': 'Bearer ' + localStorage.getItem(ACCESSTOKEN) }
+            })
+            Swal.fire('Thông báo', 'Thêm phim thành công', 'success')
+        } catch (err) {
+            console.log(err)
+            Swal.fire('Thông báo', 'Thêm phim thất bại', 'error')
+        }
+    }
+}

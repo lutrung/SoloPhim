@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Admin() {
+export default function QuanLyNguoiDung() {
     return (
         <div>
-            Admin
+            QuanLyNguoiDung
         </div>
     )
 }

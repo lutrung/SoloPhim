@@ -14,16 +14,19 @@ export default function Header() {
         <div className="header__menu">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0 ">
             <li className="nav-item">
-              <NavLink className="nav-link" to="#">Lịch Chiếu</NavLink>
+              <a className="nav-link" href="#lichChieu">Lịch Chiếu</a>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="#">Cụm Rạp</NavLink>
+              <a className="nav-link" href="#cumrap">Cụm Rạp</a>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="#">Tin tức</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="#">Ứng dụng</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/admin">ADMIN</NavLink>
             </li>
             {userLogin.taiKhoan ?
               <li className="nav-item">

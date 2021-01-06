@@ -7,8 +7,8 @@ header {
         z-index: 999;
         background: rgba(255, 255, 255, 0.95);
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-        &:hover{
-            background: rgb(255, 255, 255);  
+        &:hover {
+            background: rgb(255, 255, 255);
         }
     }
 
@@ -58,7 +58,7 @@ header {
 
         .location {
             display: flex;
-            .location__logo{
+            .location__logo {
                 padding-top: $pd-0;
                 padding-left: $pd-1;
             }
@@ -98,20 +98,20 @@ header {
             }
         }
     }
-    .rightMenu{
+    .rightMenu {
         display: none;
     }
 }
 
-@include responsive("medium"){
-    header{
-        .header__menu{
+@include responsive("medium") {
+    header {
+        .header__menu {
             display: none;
         }
-        .header__user{
+        .header__user {
             display: none;
         }
-        .rightMenu{
+        .rightMenu {
             display: block;
             background-color: $color-white-0;
             width: 70%;
@@ -120,7 +120,7 @@ header {
             top: 0;
             // left: 30%;
             .account {
-                padding-top: $pd-3 ;
+                padding-top: $pd-3;
                 padding-left: $pd-3;
                 border-right: 1px solid #e6e6e6;
                 img {
@@ -135,6 +135,3 @@ header {
         }
     }
 }
-
-
-

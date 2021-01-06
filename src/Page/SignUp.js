@@ -97,7 +97,7 @@ export default function DangKy(props) {
                             <p className='title'>Số điện thoại:</p>
                             <div className='formSigup'>
                                 <i class="fa fa-mobile-alt"></i>
-                                <input types='phoneNumber' name='soDt' className='form-control' placeholder='Số điện thoại' onChange={handleChangeInput} />
+                                <input types='phoneNumber' name='phoneNumber' className='form-control' placeholder='Số điện thoại' onChange={handleChangeInput} />
                             </div>
                             <p className="text-danger error">{error.phoneNumber}</p>
                         </div>

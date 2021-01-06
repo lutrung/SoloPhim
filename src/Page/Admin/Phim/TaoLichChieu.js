@@ -1,4 +1,3 @@
-
 import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { layHeThongCumRapApiAction, layHeThongRapApiAction } from '../../../redux/actions/QuanLyPhimAction';
@@ -9,11 +8,9 @@ export default function TaoLichChieu(props) {
     useEffect(async () => {
         dispatch(await layHeThongRapApiAction())
     }, [])
-    const heThongRap = useSelector(state => state.QuanLyPhimReducer.heThongRap)
-    console.log(heThongRap);
-
+    const heThongRap = useSelector(state => state.QuanLyPhimReducer.heThongRap);
     // API Cum Rap
-    const [maHTR, setMaHTR] = useState()
+    const [maHTR, setMaHTR] = useState('BHDStar')
     const handleChangeHTR = (e) => {
         const ma = e.target.value
         setMaHTR(ma)
@@ -22,26 +19,27 @@ export default function TaoLichChieu(props) {
         dispatch(await layHeThongCumRapApiAction(maHTR))
     }, [maHTR])
     const cumRap = useSelector(state => state.QuanLyPhimReducer.cumRap)
-    console.log('cumRap', cumRap);
 
     return (
         <div className='taoLichChieu_content'>
             {/* Button */}
-            <button type="button" className="btn btn-success" data-toggle="modal" data-target="#taoLichChieuModal">
+            <button type="button" className="btn btn-success" data-toggle="modal" data-target={`#taoLichChieuModal${props.maPhim}`} >
                 Tạo lịch chiếu
             </button>
             {/* Modal */}
-            <div className="modal fade taoLichChieuModal" id="taoLichChieuModal" tabIndex={-1} role="dialog" aria-labelledby="taoLichChieuModalLabel" aria-hidden="true">
+            <div className="modal fade taoLichChieuModal" id={`taoLichChieuModal${props.maPhim}`} tabIndex={-1} role="dialog" aria-labelledby="taoLichChieuModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="taoLichChieuModalLabel">Tạo lịch chiếu phim (binding tên phim)</h5>
+                            <h2 className="modal-title" id="taoLichChieuModalLabel">
+                                Tạo lịch chiếu cho phim {props.tenPhim}
+                            </h2>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">×</span>
                             </button>
                         </div>
                         <div className="modal-body">
-                            <form autocomplete="off">
+                            <form>
                                 <div className='form_LR'>
                                     <div className='form_Left'>
                                         <div className="form-group">

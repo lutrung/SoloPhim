@@ -1,31 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import DanhSachPhim from './DanhSachPhim';
-import PhanTrang from './PhanTrang';
+import PhanTrang from '../NguoiDung/PhanTrang';
 import ThemPhim from './ThemPhim';
 
 export default function QuanLyPhim(props) {
-
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1)
-    const [postPerPage, setPostPerPage] = useState(5)
+    const [postsPerPage] = useState(5)
 
     useEffect(() => {
-        const layDsPhim = async () => {
-            setLoading(true);
-            const results = await Axios.get('https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01')
-            setPosts(results.data);
-            setLoading(false);
+        const fetchPost = async () => {
+            setLoading(true)
+            const res = await Axios.get('https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01')
+            setPosts(res.data)
+            setLoading(false)
         }
-        layDsPhim()
-    }, []);
+        fetchPost()
+    }, [])
 
-    const indexOfLastPost = currentPage * postPerPage
-    const indexOfFistPost = indexOfLastPost - postPerPage
-    const currentPosts = posts.slice(indexOfFistPost, indexOfLastPost)
-    const paginate = (pageNumber) => setCurrentPage(pageNumber)
-
+    if (loading && posts.length === 0) {
+        return <h2>Loading...</h2>
+    }
+    // Get current posts
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+    const howManyPages = Math.ceil(posts.length / postsPerPage)
 
 
     return (
@@ -52,7 +54,7 @@ export default function QuanLyPhim(props) {
                         <DanhSachPhim posts={currentPosts} />
                     </tbody>
                 </table>
-                <PhanTrang postPerPage={postPerPage} totalPosts={posts.length} paginate={paginate} />
+                <PhanTrang pages={howManyPages} setCurrentPage={setCurrentPage} />
             </div>
         </div>
     )

@@ -1589,18 +1589,19 @@ footer .footer__copyright .footer__info span:first-child {
 }
 
 .quanLyPhim_content .bangPhim .table {
-  height: 500px;
+  height: 600px;
 }
 
 .quanLyPhim_content .bangPhim .table .head th {
   white-space: nowrap;
 }
 
-.quanLyPhim_content .bangPhim .table .body .test {
+.quanLyPhim_content .bangPhim .table .body .moTa, .quanLyPhim_content .bangPhim .table .body .tenPhim {
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   display: -webkit-box !important;
+  margin: 0;
 }
 
 .modal-dialog {
@@ -1676,6 +1677,65 @@ footer .footer__copyright .footer__info span:first-child {
 .taoLichChieu_content .taoLichChieuModal .form_LR .form_Right {
   width: 100%;
   padding: 0 5px;
+}
+
+.pagination-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* background: rgba(216, 73, 73, 0.2); */
+  width: 100%;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.pagination-container a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: black;
+  /* padding: 8px 14px; */
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.pagination-container a.active {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #7cbddb;
+}
+
+.pagination-container a.disabled {
+  opacity: 0.2;
+}
+
+.pagination-container a:hover:not(.active) {
+  background-color: #eeeeee;
+}
+
+.quanLyNguoiDung_content .bangTaiKhoan .table {
+  height: 600px;
+}
+
+.quanLyNguoiDung_content .bangTaiKhoan .table .head th {
+  white-space: nowrap;
 }
 
 @-webkit-keyframes fadeInDown {

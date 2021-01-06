@@ -44,7 +44,7 @@ export default function Header() {
                 </li>
                 : (<>
                   <li className="nav-item">
-                    <NavLink className="nav-link" activeClassName='bg-dark text-white' to="/dangnhap">Đăng nhập</NavLink>
+                    <a className="nav-link" activeClassName='bg-dark text-white' href="/dangnhap">Đăng nhập</a>
                   </li>
                   <li className="nav-item">
                     <NavLink className="nav-link" activeClassName='bg-dark text-white' to="/dangky">Đăng ký</NavLink>

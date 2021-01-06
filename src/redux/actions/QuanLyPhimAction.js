@@ -1,7 +1,7 @@
 import Axios from 'axios'
 import Swal from 'sweetalert2'
 import { ACCESSTOKEN } from '../../Util/Config'
-import { LAY_DANH_SACH_PHIM_ACTION, LAY_HE_THONG_CUM_RAP_ACTION, LAY_HE_THONG_RAP_ACTION, LAY_LICH_CHIEU_HE_THONG_RAP_ACTION, THONG_TIN_PHONG_VE_ACTION, DAT_VE_THANH_CONG, THONG_TIN_LICH_CHIEU_ACTION } from '../Const/QuanLyPhimConst'
+import { LAY_DANH_SACH_PHIM_ACTION, LAY_HE_THONG_CUM_RAP_ACTION, LAY_HE_THONG_RAP_ACTION, LAY_LICH_CHIEU_HE_THONG_RAP_ACTION, THONG_TIN_PHONG_VE_ACTION, DAT_VE_THANH_CONG, THONG_TIN_LICH_CHIEU_ACTION, SUA_PHIM_ACTION } from '../Const/QuanLyPhimConst'
 export const layDanhSachPhimApiAction = async () => {
     return async (dispatch) => {
         try {
@@ -135,3 +135,9 @@ export const themPhimApiAction = async (form_data) => {
         }
     }
 }
+export const suaPhimAction = (phim) => {
+    return {
+        type: SUA_PHIM_ACTION,
+        phimNguoiDungChinhSua: phim,
+    };
+};
